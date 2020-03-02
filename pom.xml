@@ -67,7 +67,7 @@
         <module>bom/deployment</module>
 
         <!-- Integration Tests -->
-        <module>integration-tests</module>
+        <module>camel-integration-tests</module>
         <module>kogito-integration-tests</module>
     </modules>
 
@@ -147,7 +147,7 @@
             </build>
         </profile>
         <profile>
-            <id>regen</id>
+            <id>regen-camel</id>
             <build>
                 <plugins>
                     <plugin>
@@ -170,10 +170,10 @@
                                             <versionPlaceholder>@{camel-quarkus.version}</versionPlaceholder>
                                         </testJarXml>
                                     </testJarXmls>
-                                    <testModulesParentDir>integration-tests</testModulesParentDir>
+                                    <testModulesParentDir>camel-integration-tests</testModulesParentDir>
                                     <testModuleArtifactIdReplacers>/^camel-quarkus-integration-test-(.*)$/quarkus-universe-integration-tests-camel-$1/</testModuleArtifactIdReplacers>
                                     <testModuleDirReplacers>/^camel-quarkus-integration-test-(.*)$/camel-$1/</testModuleDirReplacers>
-                                    <rpkgModulePomXmlPath>integration-tests/rpkgtests/pom.xml</rpkgModulePomXmlPath>
+                                    <rpkgModulePomXmlPath>camel-integration-tests/rpkgtests/pom.xml</rpkgModulePomXmlPath>
                                     <rpkgtestsPluginVersion>@{rpkgtests-maven-plugin.version}</rpkgtestsPluginVersion>
                                     <templatesUriBase>file:src/rpkg-templates</templatesUriBase>
                                 </configuration>
@@ -206,7 +206,7 @@
                                                 + "the test execution.").getBytes(StandardCharsets.UTF_8)
                                         Stream<Path> items = null
                                         try {
-                                            items = Files.list(Paths.get("${basedir}/integration-tests"))
+                                            items = Files.list(Paths.get("${basedir}/camel-integration-tests"))
                                             items
                                                 .filter{itestDir -> Files.isDirectory(itestDir)}
                                                 .filter{itestDir -> !"rpkgtests".equals(itestDir.getFileName().toString())}
