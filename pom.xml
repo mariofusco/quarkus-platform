@@ -175,7 +175,7 @@
                                     <testModuleDirReplacers>/^camel-quarkus-integration-test-(.*)$/camel-$1/</testModuleDirReplacers>
                                     <rpkgModulePomXmlPath>camel-integration-tests/rpkgtests/pom.xml</rpkgModulePomXmlPath>
                                     <rpkgtestsPluginVersion>@{rpkgtests-maven-plugin.version}</rpkgtestsPluginVersion>
-                                    <templatesUriBase>file:src/rpkg-templates</templatesUriBase>
+                                    <templatesUriBase>file:src/camel-rpkg-templates</templatesUriBase>
                                 </configuration>
                             </execution>
                         </executions>
@@ -253,7 +253,7 @@
                                     <testModulesParentDir>kogito-integration-tests</testModulesParentDir>
                                     <rpkgModulePomXmlPath>kogito-integration-tests/rpkgtests/pom.xml</rpkgModulePomXmlPath>
                                     <rpkgtestsPluginVersion>@{rpkgtests-maven-plugin.version}</rpkgtestsPluginVersion>
-                                    <templatesUriBase>file:src/rpkg-templates</templatesUriBase>
+                                    <templatesUriBase>file:src/kogito-rpkg-templates</templatesUriBase>
                                 </configuration>
                             </execution>
                         </executions>

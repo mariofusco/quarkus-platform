@@ -4,18 +4,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>io.quarkus</groupId>
-        <artifactId>quarkus-universe-kogito-integration-tests-parent</artifactId>
-        <version>999-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
+        <groupId>[=parent.groupId]</groupId>
+        <artifactId>[=parent.artifactId]</artifactId>
+        <version>[=parent.version]</version>
+        <relativePath>[=parentRelativePath]</relativePath>
     </parent>
 
-    <artifactId>kogito-quarkus-integration-test</artifactId>
+    <artifactId>[=runTestsModule.artifactId]</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-universe-kogito-integration-tests-rpkgtests</artifactId>
+            <groupId>[=rpkgModule.groupId]</groupId>
+            <artifactId>[=rpkgModule.artifactId]</artifactId>
             <version>${project.version}</version>
             <type>pom</type>
             <exclusions>
@@ -26,87 +26,87 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>org.kie.kogito</groupId>
-            <artifactId>kogito-quarkus-integration-test</artifactId>
-            <version>8.0.0-SNAPSHOT</version>
+            <groupId>[=testJar.groupId]</groupId>
+            <artifactId>[=testJar.artifactId]</artifactId>
+            <version>[=testJar.version]</version>
         </dependency>
         <dependency>
-            <groupId>org.kie.kogito</groupId>
-            <artifactId>kogito-quarkus-integration-test-rpkgtests</artifactId>
-            <version>8.0.0-SNAPSHOT</version>
+            <groupId>[=testJar.groupId]</groupId>
+            <artifactId>[=testJar.artifactId]-rpkgtests</artifactId>
+            <version>[=testJar.version]</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
-            <groupId>org.kie.kogito</groupId>
+            <groupId>[=testJar.groupId]</groupId>
             <artifactId>kogito-api</artifactId>
-            <version>8.0.0-SNAPSHOT</version>
+            <version>[=testJar.version]</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.kie.kogito</groupId>
+            <groupId>[=testJar.groupId]</groupId>
             <artifactId>kogito-internal</artifactId>
-            <version>8.0.0-SNAPSHOT</version>
+            <version>[=testJar.version]</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.kie.kogito</groupId>
+            <groupId>[=testJar.groupId]</groupId>
             <artifactId>drools-core</artifactId>
-            <version>8.0.0-SNAPSHOT</version>
+            <version>[=testJar.version]</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.kie.kogito</groupId>
+            <groupId>[=testJar.groupId]</groupId>
             <artifactId>drools-compiler</artifactId>
-            <version>8.0.0-SNAPSHOT</version>
+            <version>[=testJar.version]</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.kie.kogito</groupId>
+            <groupId>[=testJar.groupId]</groupId>
             <artifactId>drools-decisiontables</artifactId>
-            <version>8.0.0-SNAPSHOT</version>
+            <version>[=testJar.version]</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.kie.kogito</groupId>
+            <groupId>[=testJar.groupId]</groupId>
             <artifactId>kogito-codegen</artifactId>
-            <version>8.0.0-SNAPSHOT</version>
+            <version>[=testJar.version]</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.kie.kogito</groupId>
+            <groupId>[=testJar.groupId]</groupId>
             <artifactId>drools-core-reflective</artifactId>
-            <version>8.0.0-SNAPSHOT</version>
+            <version>[=testJar.version]</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.kie.kogito</groupId>
+            <groupId>[=testJar.groupId]</groupId>
             <artifactId>drools-core-static</artifactId>
-            <version>8.0.0-SNAPSHOT</version>
+            <version>[=testJar.version]</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.kie.kogito</groupId>
+            <groupId>[=testJar.groupId]</groupId>
             <artifactId>jbpm-bpmn2</artifactId>
-            <version>8.0.0-SNAPSHOT</version>
+            <version>[=testJar.version]</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.kie.kogito</groupId>
+            <groupId>[=testJar.groupId]</groupId>
             <artifactId>jbpm-flow</artifactId>
-            <version>8.0.0-SNAPSHOT</version>
+            <version>[=testJar.version]</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.kie.kogito</groupId>
+            <groupId>[=testJar.groupId]</groupId>
             <artifactId>jbpm-flow-builder</artifactId>
-            <version>8.0.0-SNAPSHOT</version>
+            <version>[=testJar.version]</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.kie.kogito</groupId>
+            <groupId>[=testJar.groupId]</groupId>
             <artifactId>kogito-dmn</artifactId>
-            <version>8.0.0-SNAPSHOT</version>
+            <version>[=testJar.version]</version>
             <scope>test</scope>
         </dependency>
 
@@ -119,7 +119,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <dependenciesToScan>
-                        <dependency>org.kie.kogito:kogito-quarkus-integration-test-rpkgtests</dependency>
+                        <dependency>[=testJar.groupId]:[=testJar.artifactId]-rpkgtests</dependency>
                     </dependenciesToScan>
                 </configuration>
             </plugin>
@@ -141,7 +141,7 @@
                         <artifactId>maven-failsafe-plugin</artifactId>
                         <configuration>
                             <dependenciesToScan>
-                                <dependency>org.kie.kogito:kogito-quarkus-integration-test-rpkgtests</dependency>
+                                <dependency>[=testJar.groupId]:[=testJar.artifactId]-rpkgtests</dependency>
                             </dependenciesToScan>
                         </configuration>
                         <executions>
@@ -169,7 +169,7 @@
                                     <goal>native-image</goal>
                                 </goals>
                                 <configuration>
-                                    <appArtifact>org.kie.kogito:kogito-quarkus-integration-test:8.0.0-SNAPSHOT</appArtifact>
+                                    <appArtifact>[=testJar.groupId]:[=testJar.artifactId]:[=testJar.versionPlaceholder]</appArtifact>
                                     <reportErrorsAtRuntime>false</reportErrorsAtRuntime>
                                     <cleanupServer>true</cleanupServer>
                                     <enableHttpUrlHandler>true</enableHttpUrlHandler>
